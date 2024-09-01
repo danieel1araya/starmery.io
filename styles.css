@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'nougatregular';
+    src: url('fonts/Nougat-ExtraBlack.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Aplicación de la fuente personalizada */
+body {
+    font-family: 'nougatregular', sans-serif;
+    background-color: black; /* Fondo claro para visualizar mejor el texto */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para elementos de texto */
+h1, h2, p {
+    font-family: 'nougatregular', sans-serif;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Estilo para el ícono del Brawler */
+.icono-brawler {
+    width: 105px; /* Tamaño del ícono más grande */
+    height: 85px;
+    border-radius: 40%; /* Redondea los íconos */
+    margin-right: 15px;
+}
+
+/* Estilo para el nombre del Brawler */
+.card-title {
+    font-size: 1.75rem; /* Haz el nombre más grande */
+    font-weight: bold; /* Añade negrita para destacar */
+}
+
+/* Define la animación del gradiente */
+@keyframes gradiente-movimiento {
+    0% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Clase para aplicar el gradiente dorado al texto con animación */
+.titulo-dorado {
+    font-size: 20px; /* Ajusta el tamaño de fuente según lo necesites */
+    font-weight: bold; /* Hace que el texto sea más visible */
+    background: linear-gradient(90deg, #ffee01, #c29929, #ffee01); /* Gradiente dorado */
+    background-size: 200% 100%; /* Asegura que el gradiente ocupe el tamaño necesario para la animación */
+    -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
+    -webkit-text-fill-color: transparent; /* Hace que el texto sea transparente para mostrar el gradiente */
+    display: inline; /* Asegúrate de que el texto esté en línea para aplicar el gradiente correctamente */
+    animation: gradiente-movimiento 2s linear infinite; /* Aplica la animación del gradiente */
+    border: 1px;
+}
+
+
+/* Estilo general para las tarjetas */
+.card {
+    width: 18.5rem; /* Ancho fijo */
+    height: 17rem; /* Alto fijo */
+    margin: 1rem; /* Espacio entre las tarjetas */
+    display: inline-block; /* Mostrar tarjetas en fila */
+    vertical-align: top; /* Alinear tarjetas hacia la parte superior */
+    overflow: hidden; /* Esconde contenido desbordante */
+}
+
+.meta-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white; /* Color del texto, cambia según necesites */
+}
+
+/* Estilo personalizado para el distintivo */
+.badge-custom {
+    background-color: #a680ff; /* Color de fondo del distintivo */
+    color: #fff; /* Color del texto del distintivo */
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem; /* Bordes redondeados */
+}
+
+.tier-list{
+    color: white;
+}
+
+.icono{
+    width: 85px; /* Tamaño del ícono más grande */
+    height: 65px;
+}
+
+.brawler-container {
+    display: flex;
+    gap: 10px; /* Espacio entre cada Brawler */
+    flex-wrap: wrap; /* Esto permitirá que los Brawlers se ajusten si no caben en una fila */
+}
+
+.brawler-container .brawler {
+    text-align: center;
+}
+
+.brawler p {
+    margin-top: 5px; /* Ajusta el espacio entre la imagen y el texto */
+}
+
+.tierss{
+    background-color: #FD5450;
+    color: black;
+    text-indent: 10px; 
+}
+
+.tiers{
+    background-color: #FF8D80;
+    color: black;
+    text-indent: 10px; 
+}
+
+.tiera{
+    background-color: #f7ab73;
+    color: black;
+    text-indent: 10px; 
+}
+
+.tierb{
+    background-color: #F6C15A;
+    color: black;
+    text-indent: 10px; 
+}
+
+.tierc{
+    background-color:#BDE772;
+    color: black;
+    text-indent: 10px; 
+}
+
+.tierd{
+    background-color:#79E57A;
+    color: black;
+    text-indent: 10px; 
+}
+

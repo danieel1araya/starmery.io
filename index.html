@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starmery</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Enlace al archivo CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-link">
+        <div class="container">
+            <!-- Marca o Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/wonder-day-brawl-stars-png-8.png" alt="Logo" height="50">
+                Starmery
+            </a>
+            <!-- Botón de toggle para pantallas pequeñas -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Links de navegación -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" onclick="showSection('maestrias')">Maestrías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" onclick="showSection('meta')">Meta</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Maestrías -->
+    <div class="container my-4 section" id="maestrias">
+        <!-- Sección de Búsqueda y Ordenación -->
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Búsqueda por Nombre -->
+                <input type="text" id="searchInput" class="form-control" placeholder="Buscar por nombre...">
+            </div>
+            <div class="col-md-6">
+                <!-- Botones de Ordenación -->
+                <div class="btn-group">
+                    <button class="btn btn-primary" onclick="sortBrawlers('categoria')">Ordenar por Rareza</button>
+                    <button class="btn btn-danger" onclick="sortBrawlers('letra')">Orden Alfabetico</button>
+                    <button class="btn btn-success" onclick="sortBrawlers('reciente')">Ordenar por Reciente</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor de Brawlers -->
+        <div class="container" id="brawlerContainer">
+            <!-- Los Brawlers se generarán aquí dinámicamente -->
+        </div>
+    </div>
+
+    <!-- Nueva Sección Meta -->
+<div class="container my-4 section" id="meta" style="display: none;">
+    <div class="d-flex align-items-center">
+        <h2 class="meta-title">Tierlist Brawlers</h2>
+        <span class="badge badge-custom ms-3">Septiembre 2024</span>
+    </div>
+    <div class="tier-list">
+        <p>Tierlist según otros tierlist y opiniones de jugadores</p>
+
+        <h3 class="tierss">Tier S++</h3>
+        <div class="brawler-container">
+            <div class="brawler">
+                <img class="icono" src="images/moe.png">
+                <p>Moe</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/darryl.png">
+                <p>Darryl</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/clancy.png">
+                <p>Clancy</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/meg.png">
+                <p>Meg</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/gale.png">
+                <p>Gale</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/surge.png">
+                <p>Surge</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/piper.png">
+                <p>Piper</p>
+            </div>
+        </div>
+
+        <h3 class="tiers">Tier S</h3>
+        <div class="brawler-container">
+            <div class="brawler">
+                <img class="icono" src="images/mortis.png">
+                <p>Mortis</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/colt.png">
+                <p>Colt</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/chester.png">
+                <p>Chester</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/byron.png">
+                <p>Byron</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/gray.png">
+                <p>Gray</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/rico.png">
+                <p>Rico</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/max.png">
+                <p>Max</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/frank.png">
+                <p>Frank</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/belle.png">
+                <p>Belle</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/dynamike.png">
+                <p>Dynamike</p>
+            </div>
+        </div>
+
+        <h3 class="tiera">Tier A</h3>
+        <div class="brawler-container">
+            <div class="brawler">
+                <img class="icono" src="images/lily.png">
+                <p>Lily</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/stu.png">
+                <p>Stu</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/buzz.png">
+                <p>Buzz</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/kit.png">
+                <p>Kit</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/gene.png">
+                <p>Gene</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/buster.png">
+                <p>Buster</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/tara.png">
+                <p>Tara</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/sandy.png">
+                <p>Sandy</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/mandy.png">
+                <p>Mandy</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/brock.png">
+                <p>Brock</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/gus.png">
+                <p>Gus</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/ruffs.png">
+                <p>Ruffs</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/barley.png">
+                <p>Barley</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/primo.png">
+                <p>El Primo</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/crow.png">
+                <p>Crow</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/berry.png">
+                <p>Berry</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/spike.png">
+                <p>Spike</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/melodie.png">
+                <p>Melodie</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/lou.png">
+                <p>Lou</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/carl.png">
+                <p>Carl</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/cordelius.png">
+                <p>Cordelius</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/bull.png">
+                <p>Bull</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/leon.png">
+                <p>Leon</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/colette.png">
+                <p>Colette</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/angelo.png">
+                <p>Angelo</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/mrp.png">
+                <p>Señor P</p>
+            </div>
+        </div>
+
+        <h3 class="tierb">Tier B</h3>
+        <div class="brawler-container">
+            <div class="brawler">
+                <img class="icono" src="images/sprout.png">
+                <p>Sprout</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/shelly.png">
+                <p>Shelly</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/law.png">
+                <p>Larry y Lawrie</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/grom.png">
+                <p>Grom</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/bo.png">
+                <p>Bo</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/jessie.png">
+                <p>Jessie</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/emz.png">
+                <p>Emz</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/amber.png">
+                <p>Amber</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/bibi.png">
+                <p>Bibi</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/griff.png">
+                <p>Griff</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/penny.png">
+                <p>Penny</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/poco.png">
+                <p>Poco</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/chuck.png">
+                <p>Chuck</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/rt.png">
+                <p>R-T</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/nita.png">
+                <p>Nita</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/sam.png">
+                <p>Sam</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/bea.png">
+                <p>Bea</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/janet.png">
+                <p>Janet</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/willow.png">
+                <p>Willow</p>
+            </div>
+        </div>
+
+        <h3 class="tierc">Tier C</h3>
+        <div class="brawler-container">
+            <div class="brawler">
+                <img class="icono" src="images/nani.png">
+                <p>Nani</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/lola.png">
+                <p>Lola</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/tick.png">
+                <p>Tick</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/mico.png">
+                <p>Mico</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/edgar.png">
+                <p>Edgar</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/fang.png">
+                <p>Fang</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/doug.png">
+                <p>Doug</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/eve.png">
+                <p>Eve</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/bonnie.png">
+                <p>Bonnie</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/pearl.png">
+                <p>Pearl</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/draco.png">
+                <p>Draco</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/jacky.png">
+                <p>Jacky</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/otis.png">
+                <p>Otis</p>
+            </div>
+        </div>
+
+        <h3 class="tierd">Tier D</h3>
+        <div class="brawler-container">
+            <div class="brawler">
+                <img class="icono" src="images/charlie.png">
+                <p>Charlie</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/8bit.png">
+                <p>8-Bit</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/squeak.png">
+                <p>Squeak</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/maisie.png">
+                <p>Maisie</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/pam.png">
+                <p>Pam</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/hank.png">
+                <p>Hank</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/ash.png">
+                <p>Ash</p>
+            </div>
+            <div class="brawler">
+                <img class="icono" src="images/rosa.png">
+                <p>Rosa</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Enlace al archivo JavaScript personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+
